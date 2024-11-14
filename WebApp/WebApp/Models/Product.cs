@@ -11,7 +11,7 @@ namespace WebApp.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public TimeSpan EstimatedProductionTime { get; set; }
-        public Dictionary<RawMaterial, Double> RawMaterialNeeded { get; set; }
+        public Dictionary<RawMaterial, double> RawMaterialNeeded { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 

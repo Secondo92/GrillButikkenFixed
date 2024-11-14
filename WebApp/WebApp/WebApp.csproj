@@ -136,8 +136,10 @@
     <Compile Include="DataAccess\Repositories\RawMaterialRepository.cs" />
     <Compile Include="DTO\BilDTO.cs" />
     <Compile Include="DTO\Mappers\BilMapper.cs" />
+    <Compile Include="DTO\Mappers\ProductMapper.cs" />
     <Compile Include="DTO\Mappers\ProductProductionMapper.cs" />
     <Compile Include="DTO\Mappers\RawMaterialMapper.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="DTO\ProductProductionDTO.cs" />
     <Compile Include="DTO\RawMaterialDTO.cs" />
     <Compile Include="Global.asax.cs">
