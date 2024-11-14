@@ -1,0 +1,57 @@
+﻿@model WebApp.Models.InventoryAndProductionOverview
+@{
+    ViewBag.Title = "Produktion";
+}
+
+<div class="top-bar">
+    <div class="search-container">
+        <form action="">
+            <button type="submit">
+                <i class="bi-box-fill"></i>
+                <i class="bi bi-search"></i>
+            </button>
+            <input type="text" placeholder="Search..." name="Search">
+        </form>
+    </div>
+</div>
+
+<div class="body">
+
+    <div class="crud">
+        <button class="crud-btn to-do">Slet</button>
+        <button class="crud-btn in-progress">Redigér</button>
+        <button class="crud-btn create-type">Opret Type</button>
+        <button class="crud-btn create-new">Opret Ny</button>
+    </div>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Produktionsnummer</th>
+                <th>Produktionsnavn</th>
+                <th>Startdato</th>
+                <th>Slutdato</th>
+                <th>Status</th>
+                <th>Planlagt Antal</th>
+                <th>Fuldført Antal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var production in Model.Productions)
+            {
+                <tr>
+                    <td>@production.UUID</td>
+                    <td>@production.ProductionName</td>
+                    <td>@production.StartDate.ToString("dd-MM-yyyy")</td>
+                    <td>@(production != null ? production.EndDate?.ToString("dd-MM-yyyy") ?? "Produkt ikke færdigt" : "Fejl. Ingen produktion")</td>
+                    <td>@production.Status</td>
+                    <td>@production.PlannedQuantity</td>
+                    <td>@production.CompletedQuantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
