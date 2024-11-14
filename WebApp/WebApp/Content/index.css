@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+#logo {
+    background-color: #ffffff;
+}
+
+.h2 {
+    color: #ffffff;
+}
+
+.row {
+    /*
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    */
+    height: 100vh;
+}
+
+    .row .navigation-row {
+        -ms-flex: 10%;
+        flex: 10%;
+        background-color: #4059AD;
+    }
+
+.option-container.active {
+    background-color: #aaaaaa5e;
+    cursor: pointer;
+}
+
+.row .navigation-row .option-container {
+    text-decoration: none;
+    color: #aaa;
+    width: 100%;
+    padding: 3% 10%;
+    display: flex;
+    align-items: center;
+}
+
+    .row .navigation-row .option-container:hover {
+        color: #ffffff;
+        background-color: #aaaaaa5e;
+        cursor: pointer;
+    }
+
+    .row .navigation-row .option-container .option-svg {
+        width: 30px;
+        height: 30px;
+        padding-right: 10px;
+    }
+
+
+#option-products {
+    /*test*/
+}
+
+#option-materials {
+}
+
+#option-analysis {
+}
+
+#option-settings {
+}
+
+.row .main-row {
+    -ms-flex: 80%;
+    flex: 80%;
+    background-color: white;
+}
+
+.top-bar {
+    background-color: #ffffff;
+    padding: 1%;
+    align-content: baseline;
+    border-bottom: 5px solid #4059AD;
+}
+
+    .top-bar .search-container {
+        width: 80%;
+    }
+
+        .top-bar .search-container input {
+            font-size: 15px;
+            float: none;
+            text-align: left;
+            margin: 0;
+            padding: 0.5%;
+            border-radius: 3%;
+            box-shadow: none;
+            outline: none;
+        }
+
+        .top-bar .search-container button {
+            background: #ddd;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            padding: 0.8% 1%;
+        }
+
+            .top-bar .search-container button:hover {
+                background: #ccc;
+            }
+
+
+/* Table Stuff*/
+
+
+.table thead {
+    background-color: #FF5733;
+    color: #fff;
+}
+
+.table th {
+    padding: 12px 15px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.table td {
+    padding: 12px 15px;
+}
+
+.table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .table, .table thead, .table tbody, .table th, .table td, .table tr {
+        display: block;
+        width: 100%;
+    }
+
+        .table tr {
+            margin-bottom: 10px;
+        }
+
+        .table td {
+            padding: 10px;
+            text-align: right;
+            position: relative;
+            padding-left: 50%;
+        }
+
+            .table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+}
+
+
+/* crud Stuff */
+
+
+.crud {
+    display: flex;
+    gap: 1%;
+    padding: 1% 1%;
+}
+
+.crud-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .crud-btn.to-do {
+        background-color: #8d90bd;
+    }
+
+    .crud-btn.in-progress {
+        background-color: #8d90bd;
+    }
+
+    .crud-btn.create-type {
+        background-color: #8d90bd;
+    }
+
+    .crud-btn.create-new {
+        background-color: #8d90bd;
+    }
+
+    .crud-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .crud-btn:focus {
+        outline: none;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    }
+
+@media (max-width: 768px) {
+    .crud {
+        flex-direction: column;
+    }
+
+    .crud-btn {
+        width: 100%;
+    }
+}
