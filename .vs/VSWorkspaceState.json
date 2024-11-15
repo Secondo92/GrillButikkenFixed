@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\WebApp",
+    "\\WebApp\\WebApp",
+    "\\WebApp\\WebApp\\Controllers",
+    "\\WebApp\\WebApp\\DataAccess",
+    "\\WebApp\\WebApp\\DataAccess\\Context",
+    "\\WebApp\\WebApp\\DataAccess\\Repositories",
+    "\\WebApp\\WebApp\\Models",
+    "\\WebApp\\WebApp\\Models\\Frontend",
+    "\\WebApp\\WebApp\\Service"
+  ],
+  "SelectedNode": "\\WebApp\\WebApp.sln",
+  "PreviewInSolutionExplorer": false
+}

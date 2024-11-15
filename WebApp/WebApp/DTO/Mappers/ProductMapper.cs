@@ -19,7 +19,8 @@ namespace WebApp.DTO.Mappers
                     product.EstimatedProductionTime, 
                     product.RawMaterialNeeded, 
                     product.CreatedAt, 
-                    product.UpdatedAt);
+                    product.UpdatedAt,
+                    product.AmountInStock);
         }
 
         public static Product Map(ProductDTO productDTO)
@@ -32,7 +33,8 @@ namespace WebApp.DTO.Mappers
                     productDTO.EstimatedProductionTime,
                     productDTO.RawMaterialNeeded,
                     productDTO.CreatedAt,
-                    productDTO.UpdatedAt);
+                    productDTO.UpdatedAt,
+                    productDTO.AmountInStock);
         }
 
         internal static void Update(ProductDTO productDTO, Product product)

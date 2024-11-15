@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using WebApp.BLL;
+using WebApp.DataAccess.Repositories;
 using WebApp.DTO;
 using WebApp.Models;
 using WebApp.Models.Frontend;
@@ -17,8 +18,8 @@ namespace WebApp.Controllers
         private ProductionFactory grillSpydFactory = new ProductionFactory();
         public ActionResult Index()
         {
-            // BilBLL bll = new BilBLL();
-            // BilDTO bildto = bll.getBil(1);
+             BilBLL bll = new BilBLL();
+             BilDTO bildto = bll.getBil(1);
             ViewBag.Message = "Your home page.";
             return View();
         }
@@ -82,9 +83,10 @@ namespace WebApp.Controllers
 
         public ActionResult ProduktView()
         {
-            // Dummydata her
+            List<ProductDTO> products = ProductRepository.GetProducts();
+
             ViewBag.Message = "Your products page.";
-            return View();
+            return View(products);
         }
 
         public ActionResult ProduktionView()
