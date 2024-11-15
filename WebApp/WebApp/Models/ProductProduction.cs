@@ -22,15 +22,13 @@ namespace WebApp.Models
         {
 
         }
-        public ProductProduction(int projectId, string projectName, Product product, int quantityToProduce, DateTime createdAt, DateTime deadline, TimeSpan timeSpent, Status status)
+        public ProductProduction(string projectName, Product product, int quantityToProduce, DateTime createdAt, DateTime deadline, Status status)
         {
-            ProjectId = projectId;
             ProjectName = projectName;
             Product = product;
             QuantityToProduce = quantityToProduce;
             CreatedAt = createdAt;
             Deadline = deadline;
-            TimeSpent = timeSpent;
             Status = status;
         }
     }

@@ -11,14 +11,14 @@ namespace WebApp.DTO.Mappers
         public static ProductProductionDTO Map(ProductProduction productProduction)
         {
             if (productProduction != null)
-                return new ProductProductionDTO(productProduction.ProjectId, productProduction.ProjectName, productProduction.Product, productProduction.QuantityToProduce, productProduction.CreatedAt, productProduction.Deadline, productProduction.TimeSpent, productProduction.Status);
+                return new ProductProductionDTO(productProduction.ProjectName, productProduction.Product, productProduction.QuantityToProduce, productProduction.CreatedAt, productProduction.Deadline, productProduction.Status);
             else
                 return null;
         }
         public static ProductProduction Map(ProductProductionDTO productProductionDTO)
         {
             if (productProductionDTO != null)
-                return new ProductProduction(productProductionDTO.ProjectId, productProductionDTO.ProjectName, productProductionDTO.Product, productProductionDTO.QuantityToProduce, productProductionDTO.CreatedAt, productProductionDTO.Deadline, productProductionDTO.TimeSpent, productProductionDTO.Status);
+                return new ProductProduction(productProductionDTO.ProjectName, productProductionDTO.Product, productProductionDTO.QuantityToProduce, productProductionDTO.CreatedAt, productProductionDTO.Deadline, productProductionDTO.Status);
             else
                 return null;
         }

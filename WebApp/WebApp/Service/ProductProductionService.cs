@@ -3,43 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using WebApp.DataAccess.Repositories;
+using WebApp.DTO;
 using WebApp.Models;
 
 namespace WebApp.Service
 {
-    public class ProductProductionService : IProductionProjectService
+    public class ProductProductionService
     {
-        public ProductProduction GetProductProductionById(Guid guid)
+        public static List<ProductProductionDTO> GetProductProductionByName(string productionName)
         {
-
-            // ProductProduction productionProject = await _productionProjectRepository.GetById(guid);
-
-            return new ProductProduction();
+            return ProductProductionRepository.GetProductProduction(productionName);
         }
 
-        public IEnumerable<ProductProduction> GetAllProductProductions()
+        public static List<ProductProductionDTO> GetAllProductProductions()
         {
-            return new List<ProductProduction>();
+            return ProductProductionRepository.GetProductProductions();
         }
 
-        public void CreateProductProduction() // Husk at tilføje input params
+        public static ProductProductionDTO CreateProductProduction(string projectName, Product product, int quantityToProduce, DateTime createdAt, DateTime deadline, Status status) // Husk at tilføje input params
         {
-            // ProductProduction productionProject = await _productionProjectRepository.CreateProductProduction(InputParams);
+            return ProductProductionRepository.AddProductProduction(new ProductProductionDTO(projectName, product, quantityToProduce, createdAt, deadline, status));
         }
 
-        public void UpdateProductProduction(ProductProduction productionProject)
+        public static ProductProductionDTO UpdateProductProduction(ProductProductionDTO PPDTO)
         {
-            // ProductProduction productionProject = await _productionProjectRepository.UpdateProductProduction(InputParams);
+            return ProductProductionRepository.EditProductProduction(PPDTO);
         }
 
-        public void UpdateStatusForProductProduction(string status, Guid guid)
+        public static ProductProductionDTO UpdateStatusForProductProduction(Status status, ProductProductionDTO PPDTO)
         {
-            // Update the task value for a specific ProductProduction
+            return ProductProductionRepository.UpdateProductProductionStatus(status, PPDTO);
         }
 
-        public void DeleteProductProduction(Guid guid)
+        public static ProductProductionDTO DeleteProductProduction(ProductProductionDTO PPDTO)
         {
-            // ProductProduction productionProject = await _productionProjectRepository.DeleteProductProduction(Guid);
+            return ProductProductionRepository.DeleteProductProduction(PPDTO);
         }
     }
 }

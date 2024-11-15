@@ -8,32 +8,31 @@ using WebApp.Models;
 
 namespace WebApp.Service
 {
-    public class RawMaterialService : IRawMaterialService
+    public class RawMaterialService
     {
-        RawMaterialRepository rawMaterialRepository = new RawMaterialRepository();
-        public RawMaterialDTO CreateRawMaterial(string name, MeasurementType measurementType, double measurementValue)
+        public static RawMaterialDTO CreateRawMaterial(string name, MeasurementType measurementType, double measurementValue)
         {
-            return rawMaterialRepository.AddRawMaterial(new RawMaterialDTO(name, measurementType, measurementValue));
+            return RawMaterialRepository.AddRawMaterial(new RawMaterialDTO(name, measurementType, measurementValue));
         }
 
-        public RawMaterialDTO DeleteRawMaterial(RawMaterialDTO rawMaterialDTO)
+        public static RawMaterialDTO DeleteRawMaterial(RawMaterialDTO rawMaterialDTO)
         {
-            return rawMaterialRepository.DeleteRawMaterial(rawMaterialDTO);
+            return RawMaterialRepository.DeleteRawMaterial(rawMaterialDTO);
         }
 
-        public List<RawMaterialDTO> GetAllRawMaterials()
+        public static List<RawMaterialDTO> GetAllRawMaterials()
         {
-            return rawMaterialRepository.GetRawMaterials();
+            return RawMaterialRepository.GetRawMaterials();
         }
 
-        public List<RawMaterialDTO> GetRawMaterialByName(string name)
+        public static List<RawMaterialDTO> GetRawMaterialByName(string name)
         {
-            return rawMaterialRepository.GetRawMaterial(name);
+            return RawMaterialRepository.GetRawMaterial(name);
         }
 
-        public RawMaterialDTO UpdateRawMaterial(RawMaterialDTO rawMaterialDTO)
+        public static RawMaterialDTO UpdateRawMaterial(RawMaterialDTO rawMaterialDTO)
         {
-            return rawMaterialRepository.EditRawMaterial(rawMaterialDTO);
+            return RawMaterialRepository.EditRawMaterial(rawMaterialDTO);
         }
     }
 }

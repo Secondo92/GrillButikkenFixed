@@ -22,14 +22,12 @@ namespace WebApp.DTO
         {
 
         }
-        public ProductProductionDTO(int projectId, string projectName, Product product, int quantityToProduce, DateTime createdAt, DateTime deadline, TimeSpan timeSpent, Status status)
+        public ProductProductionDTO(string projectName, Product product, int quantityToProduce, DateTime createdAt, DateTime deadline, Status status)
         {
-            ProjectId = projectId;
             ProjectName = projectName;
             QuantityToProduce = quantityToProduce;
             CreatedAt = createdAt;
             Deadline = deadline;
-            TimeSpent = timeSpent;
             Status = status;
         }
     }

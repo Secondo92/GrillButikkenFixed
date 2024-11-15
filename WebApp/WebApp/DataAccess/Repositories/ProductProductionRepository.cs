@@ -61,6 +61,26 @@ namespace WebApp.DataAccess.Repositories
             return productProductionDTO;
         }
 
+        //  Update ProductProductionStatus
+        public static ProductProductionDTO UpdateProductProductionStatus(Status status, ProductProductionDTO productProductionDTO)
+        {
+            using (DatabaseContext context = new DatabaseContext())
+            {
+                ProductProduction productProduction = context.ProductProductions.Find(productProductionDTO.ProjectId);
+
+                if (productProduction != null)
+                {
+                    productProduction.Status = status;
+                    productProductionDTO.Status = status;
+
+                    context.SaveChanges();
+                }
+
+                return productProductionDTO;
+            }
+        }
+
+
         // Delete ProductProduction
         public static ProductProductionDTO DeleteProductProduction(ProductProductionDTO productProductionDTO)
         {

@@ -13,7 +13,7 @@ namespace WebApp.DataAccess.Repositories
     {
         // Create, Delete, Edit, Get, GetAll, Add
 
-        public List<RawMaterialDTO> GetRawMaterial(string name)
+        public static List<RawMaterialDTO> GetRawMaterial(string name)
         {
             using (DatabaseContext context = new DatabaseContext())
             {
@@ -21,7 +21,7 @@ namespace WebApp.DataAccess.Repositories
             }
         }
 
-        public List<RawMaterialDTO> GetRawMaterials()
+        public static List<RawMaterialDTO> GetRawMaterials()
         {
             using (DatabaseContext context = new DatabaseContext())
             {
@@ -30,7 +30,7 @@ namespace WebApp.DataAccess.Repositories
         }
 
         // Add
-        public RawMaterialDTO AddRawMaterial(RawMaterialDTO rawDTO)
+        public static RawMaterialDTO AddRawMaterial(RawMaterialDTO rawDTO)
         {
             using (DatabaseContext context = new DatabaseContext())
             {
@@ -42,7 +42,7 @@ namespace WebApp.DataAccess.Repositories
         }
 
         // Edit / update
-        public RawMaterialDTO EditRawMaterial(RawMaterialDTO rawDTO)
+        public static RawMaterialDTO EditRawMaterial(RawMaterialDTO rawDTO)
         {
             using (DatabaseContext context = new DatabaseContext())
             {
@@ -54,7 +54,7 @@ namespace WebApp.DataAccess.Repositories
             return rawDTO;
         }
 
-        public RawMaterialDTO DeleteRawMaterial(RawMaterialDTO rawDTO)
+        public static RawMaterialDTO DeleteRawMaterial(RawMaterialDTO rawDTO)
         {
             using (DatabaseContext context = new DatabaseContext())
             {
